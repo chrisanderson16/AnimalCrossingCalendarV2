@@ -17,7 +17,7 @@ import time
 
 dir_img = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'img')
 
-api_key = "9109ba4e-48fc-4d21-a05c-af77d3cb8833"
+api_key = os.environ["SECRET_NOOKIPEDIA_API_KEY"]
 
 
 class villager_bday:
