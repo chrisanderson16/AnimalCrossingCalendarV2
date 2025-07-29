@@ -40,14 +40,15 @@ events_list = {}
 for i in events_list_raw:
     events_list[events_list_raw.index(i)] = i
 
+'Datetime and Title split'
 event0_dateandtime, event0_name = events_list[0].split(";")
 
-'token_event_0_2 = token_event_0.split(",")'
-
+'Date and time split'
 event0_date, event0_time = event0_dateandtime.split("at")
 
 calendarEvents = []
 
+calendarEvents.append(event(event0_name, "","","","",""))
 
 
 if __name__ == '__main__':
@@ -55,9 +56,10 @@ if __name__ == '__main__':
     for i in events_list:
         print(f"{events_list[i]}")
 
-
-    print("Event: " + event0_name + "\nDate: " + event0_date + "\nTime: " + event0_time)
 """
-    
+    print("Event: " + calendarEvents[0].title + "\nDate: " + event0_date + "\nTime: " + event0_time)
+
+
+
 
 
