@@ -22,6 +22,7 @@ from lib.API_nook import villager_bday, pp, fromJSONgetName, getThumbnail, api_k
 from lib.imgConvertor import addBorder, rmTransparency, printBlackBMP, rmOldImgs, convert_char_thumbnails
 from lib.cal_ender import calendar_icon
 from lib.google_api import google_calendar_api, datetimeformatter
+from lib.eventHandler import getEvents, sortEvents, events2strings, f1, f2
 
 
 #OS PATH to image directory
@@ -185,24 +186,25 @@ try:
     
         # Individual calendar lines
     
-    
+    dir_events = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'events')
 
 # This step needs to be replaced with eventHandler.py
 #   Currently, the format is (date, event) as a string -> event = f"{datetime} {event}" (This is iterated through a for loop and is appended to the return)
+    cal_list = events2strings(sortEvents(getEvents(dir_events)))
 
-
-
-# Google API
+    print(cal_list)
+    """
+    # Google API
     cal_list = google_calendar_api(SCOPES)
 
     event_list = datetimeformatter(cal_list)
 
     print(event_list)
-
+    """
     # Putting entries in calendar list on screen
     lhs_calendar, height_calendar = 405, 90
     interation_cal_line = 0
-    for entry in event_list:
+    for entry in cal_list:
         if len(entry) > 37:
             draw_blk.text((lhs_calendar, height_calendar+interation_cal_line*40), "{:1}".format(entry[:35]+'...'), font=font24, fill=0)
         else:
