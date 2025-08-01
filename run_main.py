@@ -31,7 +31,6 @@ dir_img = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'img')
 #OS PATH to font directory
 dir_font = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'fonts')
 
-
 newIconSize = (250, 250)
 WHITE = (255, 255, 255, 255)
 BLACK = (0, 0, 0, 255)
@@ -186,7 +185,10 @@ try:
     
         # Individual calendar lines
     
-    dir_events = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'events')
+    
+    #OS PATH to events directory
+    dir_events = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'events')
+
 
 # This step needs to be replaced with eventHandler.py
 #   Currently, the format is (date, event) as a string -> event = f"{datetime} {event}" (This is iterated through a for loop and is appended to the return)
