@@ -187,7 +187,11 @@ try:
     
     
 
-    
+# This step needs to be replaced with eventHandler.py
+#   Currently, the format is (date, event) as a string -> event = f"{datetime} {event}" (This is iterated through a for loop and is appended to the return)
+
+
+
 # Google API
     cal_list = google_calendar_api(SCOPES)
 

@@ -30,10 +30,10 @@ events_list = []
 for raw_event in events_list_raw:
     rawEventDate, EventName = raw_event.split(";")
     eventDate = datetime.strptime(rawEventDate.strip("\u202f"), date_time_str_file_format)
-    events_list.append((EventName, eventDate))
+    events_list.append((eventDate, EventName))
 
 # Sorting events list base upon the date, which is the "2nd" item in a tuple
-events_list.sort(key=lambda date: date[1])
+events_list.sort(key=lambda date: date[0])
 
 # Gets current datetime
 currDate = datetime.today()
@@ -48,17 +48,33 @@ def rmOldEvents(dir_img):
             os.remove(os.path.join(dir_img, item))
 """
 
+tmp = "%a %b %d, %Y  %I:%M %p"
+
+f1 = "%Y-%m-%dT%H:%M:%S%z"
+f2 = "%Y-%m-%d"
+"""
+if len(cal_list[i]) > 10:
+#print(len(cal_list[i]))
+  out = datetime.datetime.strptime(s, f1).strftime("%b %-d @ %-I:%M%p")
+else:
+  out = datetime.datetime.strptime(s, f2).strftime("%b %d")
+  """
+
+
+
+
+
 if __name__ == '__main__':
 
     print(events_list_raw)
 
     for events in events_list:
-        if events[1] > currDate:
-            print("Index: " + str(events_list.index(events)) + "\nName: " + events[0] + "\nDate and Time: " + events[1].strftime("%a %b %d, %Y  %I:%M %p") + "\n\n")
+        if events[0] > currDate:
+            print(f"{events[1]} {events[0].strftime(f2)}")
 
-    print(currDate)
+    print(f"\n{currDate}")
     
-    
+    #print("Index: " + str(events_list.index(events)) + "\nName: " + events[1] + "\nDate and Time: " + events[0].strftime(f1) + "\n\n")
     
     
     
