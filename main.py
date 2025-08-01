@@ -32,7 +32,7 @@ dir_img = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'img')
 dir_font = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'fonts')
 
 #OS PATH to events directory
-dir_events = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'events')
+dir_events = os.path.join(os.path.realpath(__file__), 'events')
 
 newIconSize = (250, 250)
 WHITE = (255, 255, 255, 255)
