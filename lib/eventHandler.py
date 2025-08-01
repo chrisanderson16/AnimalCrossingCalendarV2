@@ -72,9 +72,12 @@ def getEvents(event_directory):
     date_time_str_file_format1 = "%b %d, %Y at %I:%M %p" 
     date_time_str_file_format2 = "%b %d, %Y" 
 
+    print("flag 1")
+
     # This will take all files in the directory and assign it to "events_list_raw"
     file_events_list = os.listdir(event_directory)
 
+    print("flag 2")
     
     # For each file in event directory, add it to the events_list_raw list
     for file in file_events_list:
