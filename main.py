@@ -48,6 +48,7 @@ try:
     epd.init()
     epd.Clear()
 
+    font16 = ImageFont.truetype(os.path.join(dir_font, 'FinkHeavy.ttf'), 16)
     font24 = ImageFont.truetype(os.path.join(dir_font, 'FinkHeavy.ttf'), 24)
     font48 = ImageFont.truetype(os.path.join(dir_font, 'FinkHeavy.ttf'), 48)
     font72 = ImageFont.truetype(os.path.join(dir_font, 'FinkHeavy.ttf'), 72)
