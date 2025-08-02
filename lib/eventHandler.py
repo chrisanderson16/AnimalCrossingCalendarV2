@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, date
 
 
 # Format 1 & 2 that will be displayed on Calendar
-f1 = "%a, %b %d @ %I-:%-M%p"
+f1 = "%a, %b %d @ %-I:%M%p"
 f2 = "%a, %b %d"
 
 
