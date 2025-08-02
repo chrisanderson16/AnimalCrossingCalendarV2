@@ -22,7 +22,7 @@ from lib.API_nook import villager_bday, pp, fromJSONgetName, getThumbnail, api_k
 from lib.imgConvertor import addBorder, rmTransparency, printBlackBMP, rmOldImgs, convert_char_thumbnails
 from lib.cal_ender import calendar_icon
 from lib.google_api import google_calendar_api, datetimeformatter
-from lib.eventHandler import getEvents, sortEvents, events2strings, f1, f2
+from lib.eventHandler import getEvents, sortEvents, events2strings, rmPastEvents, f1, f2
 
 
 #OS PATH to image directory
@@ -190,6 +190,8 @@ try:
     #OS PATH to events directory
     dir_events = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'events')
 
+# removes all old/past events
+    rmPastEvents(dir_events)
 
 # This step needs to be replaced with eventHandler.py
 #   Currently, the format is (date, event) as a string -> event = f"{datetime} {event}" (This is iterated through a for loop and is appended to the return)
