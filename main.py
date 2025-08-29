@@ -8,14 +8,8 @@ import traceback
 import datetime
 from PIL import Image,ImageDraw,ImageFont, ImageChops
 
-import datetime
+from datetime import datetime, timedelta, date
 import os.path
-
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
 
 import lib.initEPD7in5 as epd7in5b_V2
 from lib.API_nook import villager_bday, pp, fromJSONgetName, getThumbnail, api_key, getNumOfBdays, getAPI_data
