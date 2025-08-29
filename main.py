@@ -8,7 +8,7 @@ import traceback
 import datetime
 from PIL import Image,ImageDraw,ImageFont, ImageChops
 
-from datetime import datetime, timedelta, date
+#from datetime import datetime, timedelta, date
 import os.path
 
 import lib.initEPD7in5 as epd7in5b_V2
